@@ -51,6 +51,7 @@ func New(onFail FailHandler) Server {
 
 		if len(transaction.ResponseBody) > 0 {
 			response.Write(transaction.ResponseBody)
+			return
 		}
 		response.Write([]byte(transaction.ResponseBodyStr))
 	}))
